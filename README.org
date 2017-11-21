@@ -1,0 +1,75 @@
+#+title: Pure Common Lisp libraries for game development
+
+A list of libraries written in pure Common Lisp - that is, *with no foreign dependencies* - that may be of particular interest
+to people developing games and similar interactive applications in Common Lisp.
+
+You won't find libraries for pushing pixels and playing sounds here (for now). Those tend to require interfacing with a
+native platform API (or a foreign, usually C, library abstracting native platform APIs). But there's still plenty you can
+do without leaving the Lisp world.
+
+* The list
+
+** Image handling
+
+   | Library        | Description                                                              | Remarks                                      | Development      | License      |
+   |----------------+--------------------------------------------------------------------------+----------------------------------------------+------------------+--------------|
+   | [[https://github.com/slyrus/opticl][opticl]]         | Loading, processing and saving PNG, JPEG, TIFF, PBM, PNM and GIF images. | Designed for high performance.               | Active (2017)    | [[https://github.com/slyrus/opticl/blob/master/COPYRIGHT][BSD 2-Clause]] |
+   | [[https://common-lisp.net/project/imago/][imago]] ([[https://github.com/tokenrove/imago][GitHub]]) | Loading, saving, manipulating PNG, PNM, TGA and PCX images.              |                                              | Stalled? (2015)  | [[http://opensource.franz.com/preamble.html][Lisp LLGPL]]   |
+   | [[https://www.xach.com/lisp/zpng/][ZPNG]]           | Saving PNG images.                                                       | Does not *load* PNGs. Also, see [[https://www.xach.com/lisp/zpng/#sect-overview][limitations]]. | Complete? (2015) | ?            |
+
+** Physics
+   | Library | Functionality                                        | Remarks | Development     | License |
+   |---------+------------------------------------------------------+---------+-----------------+---------|
+   | [[https://github.com/BradWBeer/squirl][SquirL]]  | Common Lisp port of the Chipmunk 2d physics library. |         | Stalled? (2016) | [[https://github.com/BradWBeer/squirl/blob/master/COPYING][?]]       |
+
+** Fonts and text
+   | Library | Description                                  | Remarks                                                                          | Development      | License  |
+   |---------+----------------------------------------------+----------------------------------------------------------------------------------+------------------+----------|
+   | [[https://github.com/lispgames/sdf][sdf]]     | Signed Distance Field glyph atlas generator. | Uses zpb-ttf for TTF processing and opticl for image output.                     | Stalled (2017)   | [[https://github.com/lispgames/sdf/blob/master/LICENSE][MIT]]      |
+   | [[https://www.xach.com/lisp/zpb-ttf/][ZPB-TTF]] | TTF parser.                                  | Does not render text, but can be used as a base for one (see e.g. =cl-vectors=). | Complete? (2013) | BSD-like |
+
+** Vector graphics
+   | Library             | Description                                                         | Remarks                                                                                              | Development      | License  |
+   |---------------------+---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+------------------+----------|
+   | [[http://projects.tuxee.net/cl-vectors/][cl-vectors]] ([[https://github.com/fjolliton/cl-vectors][GitHub]]) | Pure CL anti-aliasing rasterizer for vector graphics.               | See [[http://projects.tuxee.net/cl-vectors/toc][documentation]]. Relatively low-level, does not render to bitmaps by itself. Compare with =vecto=. | Stalled? (2017)  | [[https://github.com/fjolliton/cl-vectors/blob/master/MIT-LICENSE][MIT]]      |
+   | [[https://www.xach.com/lisp/vecto/][vecto]]               | Simplified interface to =cl-vectors=. Can render to PNG via =ZPNG=. |                                                                                                      | Complete? (2014) | BSD-like |
+
+** Filesystem
+   | Library | Description | Remarks | Development | License |
+   |---------+-------------+---------+-------------+---------|
+   |         |             |         |             |         |
+
+   See also UIOP under [[Miscellaneous]].
+
+** OS
+   | Library | Description | Remarks | Development | License |
+   |---------+-------------+---------+-------------+---------|
+   |         |             |         |             |         |
+
+   See also UIOP under [[Miscellaneous]].
+
+** Miscellaneous
+   | Library | Description                                                                     | Remarks                                  | Development   | License |
+   |---------+---------------------------------------------------------------------------------+------------------------------------------+---------------+---------|
+   | [[https://github.com/fare/asdf/tree/master/uiop][UIOP]]    | Utilities for portably handling things, including filesystems and OS specifics. | Ships with ASDF, so you already have it. | Active (2017) | MIT     |
+
+
+* Motivation
+
+  Foreign libraries involve working with, and shipping, foreign dependencies. Doing that correctly, for all important platforms, is
+  a quite tricky and painful process. It can be done (see e.g. [[https://borodust.org/delivering-common-lisp][this article]] by borodust), but the less foreign libraries you have
+  to deliver, the less hassle you have. Moreover, the developent process itself can get tedious - even though projects like
+  [[https://github.com/rpav/cl-autowrap][cl-autowrap]] do a great job at making things easier, you might still hit a library wrapper that will require you (or people you share
+  your code with!) to have a whole LLVM environment to even build the ASDF system.
+
+  Unlike many popular dynamic languages, Common Lisp is *actually performant*, with implementations like SBCL generating code
+  that can compete in speed with C (if properly written and instrumented). This opens the possibility of using pure Common Lisp code
+  for interactive applications without taking a huge performance hit.
+
+* Contributing
+
+  If you see a library that a) can be useful in game development (or closely related areas), and b) is pure Common Lisp, i.e. has no
+  foreign dependencies that need to be managed through FFI, feel free to include it and send a Pull Request.
+
+  Corrections to any information in this list are welcome too. I have only so much patience to check e.g. licenses :).
+
