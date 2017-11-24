@@ -39,13 +39,14 @@ do without leaving the Lisp world.
    | [[https://github.com/BradWBeer/squirl][SquirL]]  | Common Lisp port of the Chipmunk 2d physics library. |         | [[https://github.com/BradWBeer/squirl/blob/master/COPYING][?]]       |
 
 ** Memory and IO
-   | Library        | Description                                        | Remarks                                                                                                                                                      | License               |
-   |----------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------|
-   | [[https://github.com/sionescu/static-vectors][static-vectors]] | Allocate =SIMPLE-ARRAY= in static memory.            | Allows to explose Lisp-allocated buffers directly to foreign code. Useful for saving performance on moving bits beteween Lisp code and foreign dependencies. | [[https://github.com/sionescu/static-vectors/blob/master/LICENCE][MIT]]                   |
-   | [[https://github.com/mfiano/fast-io][fast-io]]        | Fast octet-vector/stream IO.                       | Improves performance of =octet-vector= and =octet-stream= IO. Can optionally use =static-vectors= for extra performance in passing buffered data to foreign code.  | NewBSD                |
-   | [[https://github.com/psilord/bitio][bitio]]          | Processing octet streams as bit streams.           | Supports (and recommends) working with =fast-io=.                                                                                                              | [[https://github.com/psilord/bitio/blob/master/LICENSE][MIT]]                   |
-   | [[https://github.com/mfiano/parsley][parsley]]        | A toolset for parsing binary data formats.         |                                                                                                                                                              | [[https://github.com/mfiano/parsley/blob/master/LICENSE][MIT]]                   |
-   | [[http://method-combination.net/lisp/chipz/][chipz]] ([[https://github.com/froydnj/chipz][Github]]) | Decompressing DEFLATE, ZLIB, GZIP, and BZIP2 data. |                                                                                                                                                              | [[http://method-combination.net/lisp/chipz/][MIT-like]]/[[https://github.com/froydnj/chipz/blob/master/LICENSE][BSD 3-clause]] |
+   | Library          | Description                                           | Remarks                                                                                                                                                      | License               |
+   |------------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------|
+   | [[https://github.com/sionescu/static-vectors][static-vectors]]   | Allocate =SIMPLE-ARRAY= in static memory.               | Allows to explose Lisp-allocated buffers directly to foreign code. Useful for saving performance on moving bits beteween Lisp code and foreign dependencies. | [[https://github.com/sionescu/static-vectors/blob/master/LICENCE][MIT]]                   |
+   | [[https://github.com/mfiano/fast-io][fast-io]]          | Fast octet-vector/stream IO.                          | Improves performance of =octet-vector= and =octet-stream= IO. Can optionally use =static-vectors= for extra performance in passing buffered data to foreign code.  | NewBSD                |
+   | [[https://github.com/psilord/bitio][bitio]]            | Processing octet streams as bit streams.              | Supports (and recommends) working with =fast-io=.                                                                                                              | [[https://github.com/psilord/bitio/blob/master/LICENSE][MIT]]                   |
+   | [[https://github.com/mfiano/parsley][parsley]]          | A toolset for parsing binary data formats.            |                                                                                                                                                              | [[https://github.com/mfiano/parsley/blob/master/LICENSE][MIT]]                   |
+   | [[http://method-combination.net/lisp/chipz/][chipz]] ([[https://github.com/froydnj/chipz][Github]])   | Decompressing DEFLATE, ZLIB, GZIP, and BZIP2 data.    |                                                                                                                                                              | [[http://method-combination.net/lisp/chipz/][MIT-like]]/[[https://github.com/froydnj/chipz/blob/master/LICENSE][BSD 3-clause]] |
+   | [[http://nklein.com/software/unet/userial/][USerial]] ([[https://github.com/nklein/userial][Github]]) | General-purpose binary serialization/unserialization. | See provided [[http://nklein.com/software/unet/userial/#protocol][example]] ([[https://github.com/nklein/userial#protocol][Github]]) of implementing a networking protocol for a game on top of =USerial=.                                                            | [[https://github.com/nklein/userial/blob/master/LICENSE.txt][MIT]]                   |
 
 ** Filesystem
    | Library | Description | Remarks | License |
@@ -60,12 +61,19 @@ do without leaving the Lisp world.
 
    See also =UIOP= under Miscellaneous.
 
+** Grids and tilesets
+   | Library                  | Description                                                           | Remarks                                                                                                           | License   |
+   |--------------------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------|
+   | [[http://nklein.com/software/grid-generators/][grid-generators]] ([[https://github.com/nklein/grid-generators][Github]]) | Generate points on arbitrary (and multidimensional) grids.            | Includes =GRID-ITERATE=, which allows to walk multidimensional grids with =ITERATE=. *Not available through Quicklisp*. | Unlicense |
+   | [[https://github.com/Zulu-Inuoe/cl-tiled][cl-tiled]]                 | Loader for tiled maps generated by [[http://www.mapeditor.org][Tiled]], in TMX/TSX and JSON format. |                                                                                                                   | [[https://github.com/Zulu-Inuoe/cl-tiled/blob/master/LICENSE.md][zlib]]      |
+
 ** Randomness
    | Library     | Description                                                                              | Remarks                                                                    | License   |
    |-------------+------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------|
    | [[https://common-lisp.net/cgi-bin/darcsweb.cgi?r=cl-variates-cl-variates;a=summary][cl-variates]] | Portable Common Lisp Random Number Generation.                                           | Seems to have capabilities than are exposed by current ASDF system. A bug? | MIT Style |
    | [[https://github.com/mfiano/genie/blob/master/genie.asd][genie]]       | A simple wrapper around =cl-variates= to generate portably seedable pseudo-random numbers. |                                                                            | [[https://github.com/mfiano/genie/blob/master/LICENSE][MIT]]       |
    | [[https://github.com/sjl/cl-pcg][cl-pcg]]      | Permuted congruential generators.                                                        |                                                                            | [[https://github.com/sjl/cl-pcg/blob/master/LICENSE.markdown][MIT]]       |
+
 
 ** Data structures
    | Library            | Description                              | Remarks | License |
@@ -84,9 +92,10 @@ do without leaving the Lisp world.
    | [[https://github.com/mfiano/simple-logger][simple-logger]] | Simple message logging system.                   |                                                                                        | [[https://github.com/mfiano/simple-logger/blob/master/LICENSE][MIT]]        |
 
 ** Miscellaneous
-   | Library | Description                                                                     | Remarks                                               | License |
-   |---------+---------------------------------------------------------------------------------+-------------------------------------------------------+---------|
-   | [[https://github.com/fare/asdf/tree/master/uiop][UIOP]]    | Utilities for portably handling things, including filesystems and OS specifics. | Ships with recent ASDF, so you might already have it. | MIT     |
+   | Library             | Description                                                                     | Remarks                                                                         | License |
+   |---------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+---------|
+   | [[https://github.com/fare/asdf/tree/master/uiop][UIOP]]                | Utilities for portably handling things, including filesystems and OS specifics. | Ships with recent ASDF, so you might already have it.                           | MIT     |
+   | [[http://nklein.com/software/track-best-library/][track-best]] ([[https://github.com/nklein/track-best][Github]]) | Track the N best of some series of items.                                       | A simple yet potentially useful building block for solving variety of problems. | ?       |
 
 * Motivation
 
