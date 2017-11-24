@@ -13,13 +13,15 @@ do without leaving the Lisp world.
 
 ** Image handling
 
-   | Library        | Description                                                              | Remarks                                                                              | License      |
-   |----------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------------------+--------------|
-   | [[https://github.com/mfiano/pngload][pngload]]        | Fast library for loading PNG images.                                     | Very fast, can use =static-vectors= for extra speed.                                   | [[https://github.com/mfiano/pngload/blob/master/LICENSE][MIT]]          |
-   | [[https://github.com/Ramarren/png-read][png-read]]       | A PNG decoder for Common Lisp.                                           | Can be considered obsoleted by =pngload=, which is faster and supports all PNG chunks. | BSD-style    |
-   | [[https://github.com/slyrus/opticl][opticl]]         | Loading, processing and saving PNG, JPEG, TIFF, PBM, PNM and GIF images. | Designed for high performance.                                                       | [[https://github.com/slyrus/opticl/blob/master/COPYRIGHT][BSD 2-Clause]] |
-   | [[https://common-lisp.net/project/imago/][imago]] ([[https://github.com/tokenrove/imago][GitHub]]) | Loading, saving, manipulating PNG, PNM, TGA and PCX images.              |                                                                                      | [[http://opensource.franz.com/preamble.html][Lisp LLGPL]]   |
-   | [[https://www.xach.com/lisp/zpng/][ZPNG]]           | Saving PNG images.                                                       | Does not *load* PNGs. Also, see [[https://www.xach.com/lisp/zpng/#sect-overview][limitations]].                                           | ?            |
+   | Library               | Description                                                                         | Remarks                                                                                                                     | License      |
+   |-----------------------+-------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+--------------|
+   | [[https://github.com/mfiano/pngload][pngload]]               | Fast library for loading PNG images.                                                | Very fast, can use =static-vectors= for extra speed.                                                                          | [[https://github.com/mfiano/pngload/blob/master/LICENSE][MIT]]          |
+   | [[https://github.com/Ramarren/png-read][png-read]]              | A PNG decoder for Common Lisp.                                                      | Can be considered obsoleted by =pngload=, which is faster and supports all PNG chunks.                                        | BSD-style    |
+   | [[https://github.com/slyrus/opticl][opticl]]                | Loading, processing and saving PNG, JPEG, TIFF, PBM, PNM and GIF images.            | Designed for high performance.                                                                                              | [[https://github.com/slyrus/opticl/blob/master/COPYRIGHT][BSD 2-Clause]] |
+   | [[https://common-lisp.net/project/imago/][imago]] ([[https://github.com/tokenrove/imago][GitHub]])        | Loading, saving, manipulating PNG, PNM, TGA and PCX images.                         |                                                                                                                             | [[http://opensource.franz.com/preamble.html][Lisp LLGPL]]   |
+   | [[https://www.xach.com/lisp/zpng/][ZPNG]]                  | Saving PNG images.                                                                  | Does not *load* PNGs. Also, see [[https://www.xach.com/lisp/zpng/#sect-overview][limitations]].                                                                                  | ?            |
+   | [[https://github.com/mfiano/gamebox-sprite-packer][gamebox-sprite-packer]] | Spritesheet packer/unpacker. Generates additional metadata for packed sprite atlas. | Loads only PNGs as input files. Atlas metadata can be automatically generated in a normalized format (useful for textures). | [[https://github.com/mfiano/gamebox-sprite-packer/blob/master/LICENSE][MIT]]          |
+
 
 ** Fonts and text
    | Library | Description                                  | Remarks                                                                                       | License  |
@@ -32,6 +34,11 @@ do without leaving the Lisp world.
    |---------------------+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------|
    | [[http://projects.tuxee.net/cl-vectors/][cl-vectors]] ([[https://github.com/fjolliton/cl-vectors][GitHub]]) | Pure CL anti-aliasing rasterizer for vector graphics.           | See [[http://projects.tuxee.net/cl-vectors/toc][documentation]]. Relatively low-level, does not render to bitmaps by itself. Compare with =vecto=. | [[https://github.com/fjolliton/cl-vectors/blob/master/MIT-LICENSE][MIT]]      |
    | [[https://www.xach.com/lisp/vecto/][vecto]]               | Simplified interface to =cl-vectors=. Can render to PNG via =ZPNG=. |                                                                                                    | BSD-like |
+
+** Math
+   | Library      | Description                              | Remarks                                                                                   | License |
+   |--------------+------------------------------------------+-------------------------------------------------------------------------------------------+---------|
+   | [[https://github.com/mfiano/gamebox-math][gamebox-math]] | High-performance math library for games. | Supports 3-component vectors, 4x4 matrices and quaternions, + operations related to them. | [[https://github.com/mfiano/gamebox-math/blob/master/LICENSE][MIT]]     |
 
 ** Physics
    | Library | Functionality                                        | Remarks | License |
@@ -61,24 +68,33 @@ do without leaving the Lisp world.
 
    See also =UIOP= under Miscellaneous.
 
+** Architecture of game/engine
+   | Library               | Description                                        | Remarks                                                                                                                          | License |
+   |-----------------------+----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------|
+   | [[https://github.com/mfiano/gamebox-frame-manager][gamebox-frame-manager]] | Manager for frames within a game loop.             | Wraps the code for doing fixed timestep updates. Also computes an interpolation coefficient useful for blending frames together. | [[https://github.com/mfiano/gamebox-frame-manager/blob/master/LICENSE][MIT]]     |
+   | [[https://github.com/mfiano/gamebox-ecs][gamebox-ecs]]           | Implementation of Entity-Component-System pattern. |                                                                                                                                  | [[https://github.com/mfiano/gamebox-ecs/blob/master/LICENSE][MIT]]     |
+
 ** Grids and tilesets
    | Library                  | Description                                                           | Remarks                                                                                                           | License   |
    |--------------------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------|
    | [[http://nklein.com/software/grid-generators/][grid-generators]] ([[https://github.com/nklein/grid-generators][Github]]) | Generate points on arbitrary (and multidimensional) grids.            | Includes =GRID-ITERATE=, which allows to walk multidimensional grids with =ITERATE=. *Not available through Quicklisp*. | Unlicense |
+   | [[https://github.com/mfiano/gamebox-grids][gamebox-grids]]            | Create and manipulate tiles in a 2D grid.                             | Currently supports 4 different square and 8 different hexagonal grids.                                            | [[https://github.com/mfiano/gamebox-grids/blob/master/LICENSE][MIT]]       |
    | [[https://github.com/Zulu-Inuoe/cl-tiled][cl-tiled]]                 | Loader for tiled maps generated by [[http://www.mapeditor.org][Tiled]], in TMX/TSX and JSON format. |                                                                                                                   | [[https://github.com/Zulu-Inuoe/cl-tiled/blob/master/LICENSE.md][zlib]]      |
 
 ** Randomness
-   | Library     | Description                                                                              | Remarks                                                                         | License   |
-   |-------------+------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------|
-   | [[https://common-lisp.net/cgi-bin/darcsweb.cgi?r=cl-variates-cl-variates;a=summary][cl-variates]] | Portable Common Lisp Random Number Generation.                                           | Seems to have more capabilities than are exposed by current ASDF system. A bug? | MIT Style |
-   | [[https://github.com/mfiano/genie/blob/master/genie.asd][genie]]       | A simple wrapper around =cl-variates= to generate portably seedable pseudo-random numbers. |                                                                                 | [[https://github.com/mfiano/genie/blob/master/LICENSE][MIT]]       |
-   | [[https://github.com/sjl/cl-pcg][cl-pcg]]      | Permuted congruential generators.                                                        |                                                                                 | [[https://github.com/sjl/cl-pcg/blob/master/LICENSE.markdown][MIT]]       |
-
+   | Library      | Description                                                                              | Remarks                                                                         | License   |
+   |--------------+------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------|
+   | [[https://common-lisp.net/cgi-bin/darcsweb.cgi?r=cl-variates-cl-variates;a=summary][cl-variates]]  | Portable Common Lisp Random Number Generation.                                           | Seems to have more capabilities than are exposed by current ASDF system. A bug? | MIT Style |
+   | [[https://github.com/mfiano/genie/blob/master/genie.asd][genie]]        | A simple wrapper around =cl-variates= to generate portably seedable pseudo-random numbers. |                                                                                 | [[https://github.com/mfiano/genie/blob/master/LICENSE][MIT]]       |
+   | [[https://github.com/sjl/cl-pcg][cl-pcg]]       | Permuted congruential generators.                                                        |                                                                                 | [[https://github.com/sjl/cl-pcg/blob/master/LICENSE.markdown][MIT]]       |
+   | [[https://github.com/mfiano/gamebox-dgen][gamebox-dgen]] | A procedural dungeon generator.                                                          | Generates random 2D dungeons with rooms, corridors and entry/exit points.       | [[https://github.com/mfiano/gamebox-dgen/blob/master/LICENSE][MIT]]       |
 
 ** Data structures
-   | Library            | Description                              | Remarks | License |
-   |--------------------+------------------------------------------+---------+---------|
-   | [[https://github.com/mfiano/doubly-linked-list][doubly-linked-list]] | Doubly-linked list with key/value nodes. |         | [[https://github.com/mfiano/doubly-linked-list/blob/master/LICENSE][MIT]]     |
+   | Library            | Description                                              | Remarks                                                                                      | License |
+   |--------------------+----------------------------------------------------------+----------------------------------------------------------------------------------------------+---------|
+   | [[https://github.com/mfiano/doubly-linked-list][doubly-linked-list]] | Doubly-linked list with key/value nodes.                 |                                                                                              | [[https://github.com/mfiano/doubly-linked-list/blob/master/LICENSE][MIT]]     |
+   | [[https://github.com/zkat/cl-speedy-queue][cl-speedy-queue]]    | A portable, non-consing, optimized queue implementation. |                                                                                              | MIT     |
+   | [[http://eschulte.github.io/graph/][graph]] ([[https://github.com/eschulte/graph][Github]])     | A simple graph data structure and algorithms.            | Additional systems =GRAPH-JSON= and =GRAPH-DOT= can be used for serialization and visualization. | [[https://github.com/eschulte/graph/blob/master/COPYING][GPL 3.0]] |
 
 ** Algorithms
    | Library | Description | Remarks | License |
