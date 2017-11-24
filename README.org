@@ -9,49 +9,87 @@ do without leaving the Lisp world.
 
 * The list
 
+  Unless otherwise stated in remarks, all libraries are available through the official Quicklisp distribution, as of =2017-11-24=.
+
 ** Image handling
 
-   | Library        | Description                                                              | Remarks                                      | Development      | License      |
-   |----------------+--------------------------------------------------------------------------+----------------------------------------------+------------------+--------------|
-   | [[https://github.com/slyrus/opticl][opticl]]         | Loading, processing and saving PNG, JPEG, TIFF, PBM, PNM and GIF images. | Designed for high performance.               | Active (2017)    | [[https://github.com/slyrus/opticl/blob/master/COPYRIGHT][BSD 2-Clause]] |
-   | [[https://common-lisp.net/project/imago/][imago]] ([[https://github.com/tokenrove/imago][GitHub]]) | Loading, saving, manipulating PNG, PNM, TGA and PCX images.              |                                              | Stalled? (2015)  | [[http://opensource.franz.com/preamble.html][Lisp LLGPL]]   |
-   | [[https://www.xach.com/lisp/zpng/][ZPNG]]           | Saving PNG images.                                                       | Does not *load* PNGs. Also, see [[https://www.xach.com/lisp/zpng/#sect-overview][limitations]]. | Complete? (2015) | ?            |
+   | Library        | Description                                                              | Remarks                                                                              | License      |
+   |----------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------------------+--------------|
+   | [[git@github.com:mfiano/pngload.git][pngload]]        | Fast library for loading PNG images.                                     | Very fast, can use =static-vectors= for extra speed.                                   | [[https://github.com/mfiano/pngload/blob/master/LICENSE][MIT]]          |
+   | [[https://github.com/Ramarren/png-read][png-read]]       | A PNG decoder for Common Lisp.                                           | Can be considered obsoleted by =pngload=, which is faster and supports all PNG chunks. | BSD-style    |
+   | [[https://github.com/slyrus/opticl][opticl]]         | Loading, processing and saving PNG, JPEG, TIFF, PBM, PNM and GIF images. | Designed for high performance.                                                       | [[https://github.com/slyrus/opticl/blob/master/COPYRIGHT][BSD 2-Clause]] |
+   | [[https://common-lisp.net/project/imago/][imago]] ([[https://github.com/tokenrove/imago][GitHub]]) | Loading, saving, manipulating PNG, PNM, TGA and PCX images.              |                                                                                      | [[http://opensource.franz.com/preamble.html][Lisp LLGPL]]   |
+   | [[https://www.xach.com/lisp/zpng/][ZPNG]]           | Saving PNG images.                                                       | Does not *load* PNGs. Also, see [[https://www.xach.com/lisp/zpng/#sect-overview][limitations]].                                           | ?            |
 
 ** Physics
-   | Library | Functionality                                        | Remarks | Development     | License |
-   |---------+------------------------------------------------------+---------+-----------------+---------|
-   | [[https://github.com/BradWBeer/squirl][SquirL]]  | Common Lisp port of the Chipmunk 2d physics library. |         | Stalled? (2016) | [[https://github.com/BradWBeer/squirl/blob/master/COPYING][?]]       |
+   | Library | Functionality                                        | Remarks | QL  | License |
+   |---------+------------------------------------------------------+---------+-----+---------|
+   | [[https://github.com/BradWBeer/squirl][SquirL]]  | Common Lisp port of the Chipmunk 2d physics library. |         | Yes | [[https://github.com/BradWBeer/squirl/blob/master/COPYING][?]]       |
+
 
 ** Fonts and text
-   | Library | Description                                  | Remarks                                                                          | Development      | License  |
-   |---------+----------------------------------------------+----------------------------------------------------------------------------------+------------------+----------|
-   | [[https://github.com/lispgames/sdf][sdf]]     | Signed Distance Field glyph atlas generator. | Uses zpb-ttf for TTF processing and opticl for image output.                     | Stalled (2017)   | [[https://github.com/lispgames/sdf/blob/master/LICENSE][MIT]]      |
-   | [[https://www.xach.com/lisp/zpb-ttf/][ZPB-TTF]] | TTF parser.                                  | Does not render text, but can be used as a base for one (see e.g. =cl-vectors=). | Complete? (2013) | BSD-like |
+   | Library | Description                                  | Remarks                                                                                       | License  |
+   |---------+----------------------------------------------+-----------------------------------------------------------------------------------------------+----------|
+   | [[https://github.com/lispgames/sdf][sdf]]     | Signed Distance Field glyph atlas generator. | Uses zpb-ttf for TTF processing and opticl for image output. *Not available through Quicklisp*. | [[https://github.com/lispgames/sdf/blob/master/LICENSE][MIT]]      |
+   | [[https://www.xach.com/lisp/zpb-ttf/][ZPB-TTF]] | TTF parser.                                  | Does not render text, but can be used as a base for one (see e.g. =cl-vectors=).                | BSD-like |
 
 ** Vector graphics
-   | Library             | Description                                                         | Remarks                                                                                              | Development      | License  |
-   |---------------------+---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+------------------+----------|
-   | [[http://projects.tuxee.net/cl-vectors/][cl-vectors]] ([[https://github.com/fjolliton/cl-vectors][GitHub]]) | Pure CL anti-aliasing rasterizer for vector graphics.               | See [[http://projects.tuxee.net/cl-vectors/toc][documentation]]. Relatively low-level, does not render to bitmaps by itself. Compare with =vecto=. | Stalled? (2017)  | [[https://github.com/fjolliton/cl-vectors/blob/master/MIT-LICENSE][MIT]]      |
-   | [[https://www.xach.com/lisp/vecto/][vecto]]               | Simplified interface to =cl-vectors=. Can render to PNG via =ZPNG=. |                                                                                                      | Complete? (2014) | BSD-like |
+   | Library             | Description                                                     | Remarks                                                                                            | License  |
+   |---------------------+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------|
+   | [[http://projects.tuxee.net/cl-vectors/][cl-vectors]] ([[https://github.com/fjolliton/cl-vectors][GitHub]]) | Pure CL anti-aliasing rasterizer for vector graphics.           | See [[http://projects.tuxee.net/cl-vectors/toc][documentation]]. Relatively low-level, does not render to bitmaps by itself. Compare with =vecto=. | [[https://github.com/fjolliton/cl-vectors/blob/master/MIT-LICENSE][MIT]]      |
+   | [[https://www.xach.com/lisp/vecto/][vecto]]               | Simplified interface to =cl-vectors=. Can render to PNG via =ZPNG=. |                                                                                                    | BSD-like |
 
 ** Filesystem
-   | Library | Description | Remarks | Development | License |
-   |---------+-------------+---------+-------------+---------|
-   |         |             |         |             |         |
+   | Library | Description | Remarks | License |
+   |---------+-------------+---------+---------|
 
-   See also UIOP under [[Miscellaneous]].
+   See also =UIOP= under [[Miscellaneous]].
+
+** Memory and IO
+   | Library        | Description                                        | Remarks                                                                                                                                                      | License               |
+   |----------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------|
+   | [[https://github.com/sionescu/static-vectors][static-vectors]] | Allocate =SIMPLE-ARRAY= in static memory.            | Allows to explose Lisp-allocated buffers directly to foreign code. Useful for saving performance on moving bits beteween Lisp code and foreign dependencies. | [[https://github.com/sionescu/static-vectors/blob/master/LICENCE][MIT]]                   |
+   | [[https://github.com/mfiano/fast-io][fast-io]]        | Fast octet-vector/stream IO.                       | Improves performance of =octet-vector= and =octet-stream= IO. Can optionally use =static-vectors= for extra performance in passing buffered data to foreign code.  | NewBSD                |
+   | [[https://github.com/psilord/bitio][bitio]]          | Processing octet streams as bit streams.           | Supports (and recommends) working with =fast-io=.                                                                                                              | [[https://github.com/psilord/bitio/blob/master/LICENSE][MIT]]                   |
+   | [[https://github.com/mfiano/parsley][parsley]]        | A toolset for parsing binary data formats.         |                                                                                                                                                              | [[https://github.com/mfiano/parsley/blob/master/LICENSE][MIT]]                   |
+   | [[http://method-combination.net/lisp/chipz/][chipz]] ([[https://github.com/froydnj/chipz][Github]]) | Decompressing DEFLATE, ZLIB, GZIP, and BZIP2 data. |                                                                                                                                                              | [[http://method-combination.net/lisp/chipz/][MIT-like]]/[[https://github.com/froydnj/chipz/blob/master/LICENSE][BSD 3-clause]] |
 
 ** OS
-   | Library | Description | Remarks | Development | License |
-   |---------+-------------+---------+-------------+---------|
-   |         |             |         |             |         |
+   | Library | Description | Remarks | License |
+   |---------+-------------+---------+---------|
+   |         |             |         |         |
 
-   See also UIOP under [[Miscellaneous]].
+   See also =UIOP= under [[Miscellaneous]].
+
+** Randomness
+   | Library     | Description                                                                              | Remarks                                                                    | License   |
+   |-------------+------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------|
+   | [[https://common-lisp.net/cgi-bin/darcsweb.cgi?r=cl-variates-cl-variates;a=summary][cl-variates]] | Portable Common Lisp Random Number Generation.                                           | Seems to have capabilities than are exposed by current ASDF system. A bug? | MIT Style |
+   | [[https://github.com/mfiano/genie/blob/master/genie.asd][genie]]       | A simple wrapper around =cl-variates= to generate portably seedable pseudo-random numbers. |                                                                            | [[https://github.com/mfiano/genie/blob/master/LICENSE][MIT]]       |
+   | [[https://github.com/sjl/cl-pcg][cl-pcg]]      | Permuted congruential generators.                                                        |                                                                            | [[https://github.com/sjl/cl-pcg/blob/master/LICENSE.markdown][MIT]]       |
+
+** Data structures
+   | Library            | Description                              | Remarks | License |
+   |--------------------+------------------------------------------+---------+---------|
+   | [[https://github.com/mfiano/doubly-linked-list][doubly-linked-list]] | Doubly-linked list with key/value nodes. |         | [[https://github.com/mfiano/doubly-linked-list/blob/master/LICENSE][MIT]]     |
+
+
+** Algorithms
+   | Library | Description | Remarks | License |
+   |---------+-------------+---------+---------|
+   |         |             |         |         |
+
+** Logging
+   | Library       | Description                                      | Remarks                                                                                | License    |
+   |---------------+--------------------------------------------------+----------------------------------------------------------------------------------------+------------|
+   | [[https://github.com/sharplispers/log4cl][log4cl]]        | Powerful logging framework, modeled after Log4J. | Ships with =Log4Slime=, that lets one interact with library through log output in SLIME. | [[https://github.com/sharplispers/log4cl/blob/master/LICENSE][Apache 2.0]] |
+   | [[https://github.com/mfiano/simple-logger][simple-logger]] | Simple message logging system.                   |                                                                                        | [[https://github.com/mfiano/simple-logger/blob/master/LICENSE][MIT]]        |
 
 ** Miscellaneous
-   | Library | Description                                                                     | Remarks                                  | Development   | License |
-   |---------+---------------------------------------------------------------------------------+------------------------------------------+---------------+---------|
-   | [[https://github.com/fare/asdf/tree/master/uiop][UIOP]]    | Utilities for portably handling things, including filesystems and OS specifics. | Ships with ASDF, so you already have it. | Active (2017) | MIT     |
+   | Library | Description                                                                     | Remarks                                               | License |
+   |---------+---------------------------------------------------------------------------------+-------------------------------------------------------+---------|
+   | [[https://github.com/fare/asdf/tree/master/uiop][UIOP]]    | Utilities for portably handling things, including filesystems and OS specifics. | Ships with recent ASDF, so you might already have it. | MIT     |
+
 
 
 * Motivation
@@ -72,4 +110,8 @@ do without leaving the Lisp world.
   foreign dependencies that need to be managed through FFI, feel free to include it and send a Pull Request.
 
   Corrections to any information in this list are welcome too. I have only so much patience to check e.g. licenses :).
+
+  Also, I'm considering starting a section with usage examples for libraries that are meant to be
+  used with typical foreign gamedev dependencies - e.g. how to use =pngload= to load a texture for =cl-opengl=. Any such examples
+  are welcome too.
 
