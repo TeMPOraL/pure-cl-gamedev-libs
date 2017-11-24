@@ -21,12 +21,6 @@ do without leaving the Lisp world.
    | [[https://common-lisp.net/project/imago/][imago]] ([[https://github.com/tokenrove/imago][GitHub]]) | Loading, saving, manipulating PNG, PNM, TGA and PCX images.              |                                                                                      | [[http://opensource.franz.com/preamble.html][Lisp LLGPL]]   |
    | [[https://www.xach.com/lisp/zpng/][ZPNG]]           | Saving PNG images.                                                       | Does not *load* PNGs. Also, see [[https://www.xach.com/lisp/zpng/#sect-overview][limitations]].                                           | ?            |
 
-** Physics
-   | Library | Functionality                                        | Remarks | QL  | License |
-   |---------+------------------------------------------------------+---------+-----+---------|
-   | [[https://github.com/BradWBeer/squirl][SquirL]]  | Common Lisp port of the Chipmunk 2d physics library. |         | Yes | [[https://github.com/BradWBeer/squirl/blob/master/COPYING][?]]       |
-
-
 ** Fonts and text
    | Library | Description                                  | Remarks                                                                                       | License  |
    |---------+----------------------------------------------+-----------------------------------------------------------------------------------------------+----------|
@@ -39,11 +33,10 @@ do without leaving the Lisp world.
    | [[http://projects.tuxee.net/cl-vectors/][cl-vectors]] ([[https://github.com/fjolliton/cl-vectors][GitHub]]) | Pure CL anti-aliasing rasterizer for vector graphics.           | See [[http://projects.tuxee.net/cl-vectors/toc][documentation]]. Relatively low-level, does not render to bitmaps by itself. Compare with =vecto=. | [[https://github.com/fjolliton/cl-vectors/blob/master/MIT-LICENSE][MIT]]      |
    | [[https://www.xach.com/lisp/vecto/][vecto]]               | Simplified interface to =cl-vectors=. Can render to PNG via =ZPNG=. |                                                                                                    | BSD-like |
 
-** Filesystem
-   | Library | Description | Remarks | License |
-   |---------+-------------+---------+---------|
-
-   See also =UIOP= under Miscellaneous.
+** Physics
+   | Library | Functionality                                        | Remarks | License |
+   |---------+------------------------------------------------------+---------+---------|
+   | [[https://github.com/BradWBeer/squirl][SquirL]]  | Common Lisp port of the Chipmunk 2d physics library. |         | [[https://github.com/BradWBeer/squirl/blob/master/COPYING][?]]       |
 
 ** Memory and IO
    | Library        | Description                                        | Remarks                                                                                                                                                      | License               |
@@ -53,6 +46,12 @@ do without leaving the Lisp world.
    | [[https://github.com/psilord/bitio][bitio]]          | Processing octet streams as bit streams.           | Supports (and recommends) working with =fast-io=.                                                                                                              | [[https://github.com/psilord/bitio/blob/master/LICENSE][MIT]]                   |
    | [[https://github.com/mfiano/parsley][parsley]]        | A toolset for parsing binary data formats.         |                                                                                                                                                              | [[https://github.com/mfiano/parsley/blob/master/LICENSE][MIT]]                   |
    | [[http://method-combination.net/lisp/chipz/][chipz]] ([[https://github.com/froydnj/chipz][Github]]) | Decompressing DEFLATE, ZLIB, GZIP, and BZIP2 data. |                                                                                                                                                              | [[http://method-combination.net/lisp/chipz/][MIT-like]]/[[https://github.com/froydnj/chipz/blob/master/LICENSE][BSD 3-clause]] |
+
+** Filesystem
+   | Library | Description | Remarks | License |
+   |---------+-------------+---------+---------|
+
+   See also =UIOP= under Miscellaneous.
 
 ** OS
    | Library | Description | Remarks | License |
@@ -72,7 +71,6 @@ do without leaving the Lisp world.
    | Library            | Description                              | Remarks | License |
    |--------------------+------------------------------------------+---------+---------|
    | [[https://github.com/mfiano/doubly-linked-list][doubly-linked-list]] | Doubly-linked list with key/value nodes. |         | [[https://github.com/mfiano/doubly-linked-list/blob/master/LICENSE][MIT]]     |
-
 
 ** Algorithms
    | Library | Description | Remarks | License |
