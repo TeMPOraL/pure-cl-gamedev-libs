@@ -43,7 +43,7 @@ do without leaving the Lisp world.
    | Library | Description | Remarks | License |
    |---------+-------------+---------+---------|
 
-   See also =UIOP= under [[Miscellaneous]].
+   See also =UIOP= under Miscellaneous.
 
 ** Memory and IO
    | Library        | Description                                        | Remarks                                                                                                                                                      | License               |
@@ -59,7 +59,7 @@ do without leaving the Lisp world.
    |---------+-------------+---------+---------|
    |         |             |         |         |
 
-   See also =UIOP= under [[Miscellaneous]].
+   See also =UIOP= under Miscellaneous.
 
 ** Randomness
    | Library     | Description                                                                              | Remarks                                                                    | License   |
@@ -89,8 +89,6 @@ do without leaving the Lisp world.
    | Library | Description                                                                     | Remarks                                               | License |
    |---------+---------------------------------------------------------------------------------+-------------------------------------------------------+---------|
    | [[https://github.com/fare/asdf/tree/master/uiop][UIOP]]    | Utilities for portably handling things, including filesystems and OS specifics. | Ships with recent ASDF, so you might already have it. | MIT     |
-
-
 
 * Motivation
 
