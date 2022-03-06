@@ -94,11 +94,11 @@ do without leaving the Lisp world.
    | [[https://github.com/sjl/cl-pcg][cl-pcg]]      | Permuted congruential generators.  |                                                                                 | [[https://github.com/sjl/cl-pcg/blob/master/LICENSE.markdown][MIT]]      |
 
 ** Data structures
-   | Library            | Description                                              | Remarks                                                                                      | License |
-   |--------------------+----------------------------------------------------------+----------------------------------------------------------------------------------------------+---------|
-   | [[https://github.com/mfiano/doubly-linked-list][doubly-linked-list]] | Doubly-linked list with key/value nodes.                 |                                                                                              | [[https://github.com/mfiano/doubly-linked-list/blob/master/LICENSE][MIT]]     |
-   | [[https://github.com/zkat/cl-speedy-queue][cl-speedy-queue]]    | A portable, non-consing, optimized queue implementation. |                                                                                              | MIT     |
-   | [[http://eschulte.github.io/graph/][graph]] ([[https://github.com/eschulte/graph][Github]])     | A simple graph data structure and algorithms.            | Additional systems =GRAPH-JSON= and =GRAPH-DOT= can be used for serialization and visualization. | [[https://github.com/eschulte/graph/blob/master/COPYING][GPL 3.0]] |
+   | Library            | Description                                              | Remarks                                                                                          | License |
+   |--------------------+----------------------------------------------------------+--------------------------------------------------------------------------------------------------+---------|
+   | [[https://codeberg.org/axion/common-lisp/src/branch/master/data-structures/doubly-linked-list][doubly-linked-list]] | Doubly-linked list with key/value nodes.                 |                                                                                                  | [[https://codeberg.org/axion/common-lisp/src/branch/master/data-structures/doubly-linked-list/LICENSE][MIT]]     |
+   | [[http://eschulte.github.io/graph/][graph]] ([[https://github.com/eschulte/graph][GitHub]])     | A simple graph data structure and algorithms.            | Additional systems =GRAPH-JSON= and =GRAPH-DOT= can be used for serialization and visualization. | [[https://github.com/eschulte/graph/blob/master/LICENSE][MIT]]     |
+   | [[https://github.com/zkat/cl-speedy-queue][cl-speedy-queue]]    | A portable, non-consing, optimized queue implementation. |                                                                                                  | MIT     |
 
 ** Algorithms
    | Library | Description | Remarks | License |
