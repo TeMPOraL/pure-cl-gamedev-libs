@@ -106,10 +106,9 @@ do without leaving the Lisp world.
    |         |             |         |         |
 
 ** Logging
-   | Library       | Description                                      | Remarks                                                                                | License    |
-   |---------------+--------------------------------------------------+----------------------------------------------------------------------------------------+------------|
-   | [[https://github.com/sharplispers/log4cl][log4cl]]        | Powerful logging framework, modeled after Log4J. | Ships with =Log4Slime=, that lets one interact with library through log output in SLIME. | [[https://github.com/sharplispers/log4cl/blob/master/LICENSE][Apache 2.0]] |
-   | [[https://github.com/mfiano/simple-logger][simple-logger]] | Simple message logging system.                   |                                                                                        | [[https://github.com/mfiano/simple-logger/blob/master/LICENSE][MIT]]        |
+   | Library | Description                                      | Remarks                                                                                  | License    |
+   |---------+--------------------------------------------------+------------------------------------------------------------------------------------------+------------|
+   | [[https://github.com/sharplispers/log4cl][log4cl]]  | Powerful logging framework, modeled after Log4J. | Ships with =Log4Slime=, that lets one interact with library through log output in SLIME. | [[https://github.com/sharplispers/log4cl/blob/master/LICENSE][Apache 2.0]] |
 
 ** Miscellaneous
    | Library             | Description                                                                     | Remarks                                                                         | License |
