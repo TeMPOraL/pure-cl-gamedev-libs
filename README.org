@@ -79,12 +79,6 @@ do without leaving the Lisp world.
 
    See also =UIOP= under Miscellaneous.
 
-** Architecture of game/engine
-   | Library               | Description                                        | Remarks                                                                                                                          | License |
-   |-----------------------+----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------|
-   | [[https://github.com/mfiano/gamebox-frame-manager][gamebox-frame-manager]] | Manager for frames within a game loop.             | Wraps the code for doing fixed timestep updates. Also computes an interpolation coefficient useful for blending frames together. | [[https://github.com/mfiano/gamebox-frame-manager/blob/master/LICENSE][MIT]]     |
-   | [[https://github.com/mfiano/gamebox-ecs][gamebox-ecs]]           | Implementation of Entity-Component-System pattern. |                                                                                                                                  | [[https://github.com/mfiano/gamebox-ecs/blob/master/LICENSE][MIT]]     |
-
 ** Grids and tilesets
    | Library                  | Description                                                           | Remarks                                                                                                           | License   |
    |--------------------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------|
